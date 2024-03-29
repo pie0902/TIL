@@ -13,9 +13,9 @@
   
 ## Web
 #### NetWork
-- [HTTP&HTTPS란?]([https://github.com/pie0902/TIL/blob/main/Spring/Network/HTTP%26HTTPS.md](https://github.com/pie0902/TIL/blob/main/Spring/Web/Network/HTTP%26HTTPS.md)
-- [HTTP status code]([https://github.com/pie0902/TIL/blob/main/Spring/Network/HTTP_status_code.md](https://github.com/pie0902/TIL/blob/main/Spring/Web/Network/HTTP_status_code.md)
-- [OSI 7계층]([https://github.com/pie0902/TIL/blob/main/Spring/Network/OSI_7_%EA%B3%84%EC%B8%B5.md](https://github.com/pie0902/TIL/blob/main/Spring/Web/Network/OSI_7_%EA%B3%84%EC%B8%B5.md)
+- [HTTP&HTTPS란?](https://github.com/pie0902/TIL/blob/main/Spring/Web/Network/HTTP%26HTTPS.md)
+- [HTTP status code](https://github.com/pie0902/TIL/blob/main/Spring/Web/Network/HTTP_status_code.md)
+- [OSI 7계층](https://github.com/pie0902/TIL/blob/main/Spring/Web/Network/OSI_7_%EA%B3%84%EC%B8%B5.md)
 #### REST
 - [REST API](https://github.com/pie0902/TIL/blob/main/Spring/Web/REST/REST_API.md)
 ## DataBase
