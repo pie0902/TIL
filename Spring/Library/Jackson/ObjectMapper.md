@@ -64,6 +64,13 @@ ObjectMapper objectMapper = new ObjectMapper();
 ```
 * 이 예제에서는 ObjectMapper를 사용하여 User 객체를 JSON 문자열로 직렬화하고, 그 JSON 문자열을 다시 User 객체로 역직렬화하는 과정을 보여준다.이런 방식으로, 복잡한 객체 구조도 쉽게 JSON 형태로 변환하거나 JSON 데이터를 객체로 변환할 수 있다
 
+### 테스트 코드
+- 코드<br>
+![스크린샷 2024-04-01 오전 1 02 09](https://github.com/pie0902/TIL/assets/47919911/1b9f5a1f-7341-4215-a8cd-ffdb7c110885)
+- 결과<br>
+![스크린샷 2024-04-01 오전 1 18 59](https://github.com/pie0902/TIL/assets/47919911/2f9bf4c0-3159-4738-8623-7365df9835ec)
+
+
 
 
 
