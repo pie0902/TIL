@@ -26,7 +26,7 @@ String jsonString = objectMapper.writeValueAsString(myObject);
 MyObject myObject = objectMapper.readValue(jsonString, MyObject.class);
 ```
 ## 3.예제
-* 자바에서 사용자(User) 객체를 JSON으로 변환하고, JSON 문자열을 다시 사용자 객체로 변환하는 간단한 예제입니다.
+* 자바에서 사용자(User) 객체를 JSON으로 변환하고, JSON 문자열을 다시 사용자 객체로 변환하는 간단한 예제
 
 User 클래스:
 ```jave
@@ -35,8 +35,6 @@ Copy code
 public class User {
 private String name;
 private int age;
-
-    // 생성자, getter, setter 생략
 }
 ```
 * 직렬화 및 역직렬화:
