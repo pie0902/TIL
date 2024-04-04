@@ -16,6 +16,7 @@
 - 2024-03-28 [Spring Data JPA를 활용한 리뷰 생성 로직 구현](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/2.Spring%20Data%20JPA%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EB%A6%AC%EB%B7%B0%20%EC%83%9D%EC%84%B1%20%EB%A1%9C%EC%A7%81%20%EA%B5%AC%ED%98%84.md)
 - 2024-04-01 [Redis 캐싱으로 Spring Boot 애플리케이션 속도 향상시키기](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/3.Redis%20%EC%BA%90%EC%8B%B1%EC%9C%BC%EB%A1%9C%20Spring%20Boot%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20%EC%86%8D%EB%8F%84%20%ED%96%A5%EC%83%81%EC%8B%9C%ED%82%A4%EA%B8%B0.md)
 - 2024-04-01 [Redis를 사용한 동시성 제어](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/4.Redis%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20%EB%8F%99%EC%8B%9C%EC%84%B1%20%EC%A0%9C%EC%96%B4.md)
+- 2024-04-04 [동시성 제어에서 겪은 문제 해결 과정](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/5.%EB%8F%99%EC%8B%9C%EC%84%B1%20%EC%A0%9C%EC%96%B4%EC%97%90%EC%84%9C%20%EA%B2%AA%EC%9D%80%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0%20%EA%B3%BC%EC%A0%95.md)
 #### Library
 - Jackson
   * 2024-03-31 [Object Mapper](https://github.com/pie0902/TIL/blob/main/Spring/Library/Jackson/ObjectMapper.md)
