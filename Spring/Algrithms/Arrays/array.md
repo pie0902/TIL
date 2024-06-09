@@ -17,8 +17,7 @@ public class ArrayExample {
         array[0] = 1;
         array[1] = 2;
         array[2] = 3;
-
-        // 인덱스 접근
+        
         System.out.println("Element at index 1: " + array[1]); // 출력: 2
     }
 }
