@@ -23,6 +23,8 @@ jobs:
           list_most_recent: 5
           date_format: "2006년 01월 02일 15:04"
           footer: "Updated by GitHub Actions"
+          verbose: true # 추가: 디버깅을 위한 상세 로그 출력
+          base_dir: "." # 추가: base_dir 설정
 
       - name: List files for debugging
         run: |
