@@ -3,9 +3,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'Certifications/CIP/**'
-      - 'Spring/**'
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,5 +26,10 @@ jobs:
             tree.txt
           categories_template: |
             ## 카테고리
-
             {CATEGORIES}
+      - name: Commit and push if changed
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update README" && git push)
