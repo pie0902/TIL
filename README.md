@@ -4,8 +4,6 @@ Certifications와 Spring 관련 학습 내용 정리
 
 ---
 
-### 최근 5 개의 학습 내용
-
 ### 카테고리
 - [Certifications](./Certifications)
 - [Spring](./Spring)
@@ -17,6 +15,7 @@ Certifications와 Spring 관련 학습 내용 정리
   - [기억장치](./Certifications/CIP/기억장치.md) - 2024-07-05
   - 애플리케이션_설계
     - [공통모듈설계](./Certifications/CIP/애플리케이션_설계/공통모듈설계.md) - 2024-07-05
+    - [설계_모델링](./Certifications/CIP/애플리케이션_설계/설계_모델링.md) - 2024-07-05
   - 컴퓨터_네트워크
     - [데이터통신](./Certifications/CIP/컴퓨터_네트워크/데이터통신.md) - 2024-07-05
     - [프로토콜](./Certifications/CIP/컴퓨터_네트워크/프로토콜.md) - 2024-07-05
