@@ -48,7 +48,6 @@ def find_target(path, level):
                 file_list.append([item, item_path, mtime, sub_list])
     return file_list
 
-# 재귀적으로 파일 출력
 def print_file_list(f, file_list, level):
     file_list.sort(key=lambda file: file[2], reverse=True)
     for file in file_list:
@@ -56,7 +55,9 @@ def print_file_list(f, file_list, level):
             f.write("  ")
         if file[0].endswith('.md'):
             # 파일이면 수정 날짜와 함께 출력
-            f.write("- [{}]({}) - {}\n".format(file[0][:-3], file[1], file[2]))
+            file_name = file[0][:-3].replace(' ', '_')  # 공백을 언더스코어로 변경
+            file_path = file[1].replace(' ', '%20')  # URL 인코딩
+            f.write("- [{}]({}) - {}\n".format(file_name, file_path, file[2]))
         else:
             # 디렉토리면 날짜 빼고 출력
             f.write("- {}\n".format(file[0]))
@@ -76,8 +77,9 @@ with open("README.md", "w") as f:
     f.write("### 최근 {} 개의 학습 내용\n".format(most))
     recent_files = sorted([file for file in all_files if file[0].endswith('.md')], key=lambda x: x[2], reverse=True)[:most]
     for file in recent_files:
-        f.write("- [{}]({}) - {}\n".format(file[0][:-3], file[1], file[2]))
-    f.write("\n")
+      file_name = file[0][:-3].replace(' ', '_')  # 공백을 언더스코어로 변경
+      file_path = file[1].replace(' ', '%20')  # URL 인코딩
+      f.write("- [{}]({}) - {}\n".format(file_name, file_path, file[2]))
 
     f.write("### 카테고리\n")
     for dir_path in dir_paths:
