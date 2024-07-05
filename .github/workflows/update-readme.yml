@@ -2,45 +2,34 @@ name: Update README
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'Certifications/CIP/**'
+      - 'Spring/**'
 
 jobs:
-  update_readme:
+  update-readme:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Update README
         run: |
-          # Install tree command
-          sudo apt-get install -y tree
-
-          # Generate directory tree with file links
-          tree -f -I '.git|.github' > tree.txt
-
-          # Create README content
-          echo "# My GitHub Repository" > README.md
-          echo "" >> README.md
-          echo "## Directory Structure" >> README.md
-          echo "" >> README.md
-          while read -r line; do
-            if [[ "$line" == *\|* ]]; then
-              # Extract file name and path
-              file_name=$(echo "$line" | awk -F'|' '{print $NF}')
-              file_path=$(echo "$line" | awk -F'|' '{print $1}' | sed 's/\\/\//g; s/^\.\///; s/|/\//g')
-              echo "- [$file_name]($file_path)" >> README.md
-            else
-              echo "$line" | sed 's/\\/\//g; s/^/    /; s/|/\//g; s/^    \.\///' >> README.md
-            fi
-          done < tree.txt
-
-      - name: Commit changes
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git add README.md
-          git commit -m "Update README" || echo "No changes to commit"
-          git push
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          
+          new_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -E '^(Certifications/CIP|Spring)/.*\.md$')
+          
+          if [ -n "$new_files" ]; then
+            echo "## 최근 업데이트" >> README.md
+            echo "" >> README.md
+          
+            for file in $new_files; do
+              echo "- [$(basename $file .md)](/$file)" >> README.md
+            done
+          
+            git add README.md
+            git commit -m "Update README with new links"
+            git push
+          fi
