@@ -1,63 +1,31 @@
-name: Update README
-
+name: Build README
 on:
   push:
     branches:
-      - main  # 또는 귀하의 기본 브랜치 이름
+      - main
     paths:
       - 'Certifications/CIP/**'
       - 'Spring/**'
-
 jobs:
-  update-readme:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Check out repo
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Autoformat README
+        uses: cflynn07/github-action-til-autoformat-readme@1.2.0
         with:
-          python-version: '3.x'
+          description: |
+            공부 기록
+          list_most_recent: 5
+          date_format: "2006년 01월 02일 15:04"
+          custom_tags: "Certifications/CIP, Spring"
+          dir_table_of_contents: false
+          dir_blacklist: |
+            tree.txt
+          categories_template: |
+            ## 카테고리
 
-      - name: Update README
-        run: |
-          python3 << EOF
-          import os
-          import re
-          from datetime import datetime
-          
-          def get_new_files(directory):
-              output = os.popen(f'git diff --name-only HEAD~1 HEAD -- {directory}').read()
-              return [file for file in output.split('\n') if file.endswith('.md')]
-          
-          directories = ['Certifications/CIP', 'Spring']
-          new_files = []
-          for directory in directories:
-              new_files.extend(get_new_files(directory))
-          
-          if new_files:
-              with open('README.md', 'r') as file:
-                  content = file.read()
-          
-              update_section = "## 최근 업데이트\n\n"
-              for file in new_files:
-                  file_name = os.path.basename(file)
-                  update_section += f"- [{file_name[:-3]}]({file})\n"
-          
-              update_pattern = r'## 최근 업데이트\n\n(?:- \[.*?\]\(.*?\)\n)*'
-              if re.search(update_pattern, content):
-                  content = re.sub(update_pattern, update_section, content)
-              else:
-                  content += f"\n{update_section}"
-          
-              with open('README.md', 'w') as file:
-                  file.write(content)
-          
-              os.system('git config user.name github-actions')
-              os.system('git config user.email github-actions@github.com')
-              os.system('git add README.md')
-              os.system('git commit -m "Update README with new links"')
-              os.system('git push')
-          EOF
+            {CATEGORIES}
