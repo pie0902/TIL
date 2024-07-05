@@ -24,6 +24,13 @@ jobs:
           date_format: "2006년 01월 02일 15:04"
           footer: "Updated by GitHub Actions"
 
+      - name: List files for debugging
+        run: |
+          echo "Listing all files in the repository:"
+          ls -la
+          echo "Listing all Markdown files:"
+          find . -name "*.md"
+
       - name: Commit and push if changed
         run: |
           git config --global user.email "action@github.com"
