@@ -15,6 +15,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.PAT }}
 
+      - name: Find and list .md files
+        run: |
+          echo "Found .md files:"
+          find Certifications Spring -name "*.md" | tee md_files.txt
+
       - name: Autoformat README
         uses: cflynn07/github-action-til-autoformat-readme@1.2.0
         with:
@@ -31,10 +36,7 @@ jobs:
             {CATEGORIES}
           included_file_extensions: |
             .md
-          include_nested_files: true
-          include_dir_structures: |
-            Certifications/CIP
-            Spring
+          files_to_parse: md_files.txt
 
       - name: Commit and push if changed
         run: |
