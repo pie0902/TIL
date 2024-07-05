@@ -1,50 +1,90 @@
-# Today I Learned & Study Computer Science
-
-<details>
-<summary><h1>TIL</h1></summary>
-  
-### 기록
-#### 2024-03
-- [2024-03-27 기록](https://github.com/pie0902/TIL/blob/main/Spring/Study%20Diary/2024-03-27%20TIL.md)
-- [2024-03-28 기록](https://github.com/pie0902/TIL/blob/main/Spring/Study%20Diary/2024-03-28%20TIL.md)
-- [2024-03-29 기록](https://github.com/pie0902/TIL/blob/main/Spring/Study%20Diary/2024-03-29%20TIL.md)
-- [2024-03-31 기록](https://github.com/pie0902/TIL/blob/main/Spring/Study%20Diary/2024-03-31%20TIL.md)
-#### 2024-04
-- [2024-04-01 기록](https://github.com/pie0902/TIL/blob/main/Spring/Study%20Diary/2024-04-01%20TIL.md)
-#### Spring Boot Practices
-* Redis를 사용한 캐시/락
-1. [Redis 캐싱으로 Spring Boot 애플리케이션 속도 향상시키기](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/Redis%20%EC%BA%90%EC%8B%B1%EC%9C%BC%EB%A1%9C%20Spring%20Boot%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20%EC%86%8D%EB%8F%84%20%ED%96%A5%EC%83%81%EC%8B%9C%ED%82%A4%EA%B8%B0.md)
-2. [Redis를 사용한 동시성 제어](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/redis-lock/1.Redis%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20%EB%8F%99%EC%8B%9C%EC%84%B1%20%EC%A0%9C%EC%96%B4.md)
-3. [동시성 제어에서 겪은 문제 해결 과정](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/redis-lock/2.%EB%8F%99%EC%8B%9C%EC%84%B1%20%EC%A0%9C%EC%96%B4%EC%97%90%EC%84%9C%20%EA%B2%AA%EC%9D%80%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0%20%EA%B3%BC%EC%A0%95.md)
-4. [배포 환경을 위한 단일 Redis 인스턴스: AWS ElasticCache 활용법](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/redis-lock/3.%EB%B0%B0%ED%8F%AC%20%ED%99%98%EA%B2%BD%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EB%8B%A8%EC%9D%BC%20Redis%20%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%3A%20AWS%20ElasticCache%20%ED%99%9C%EC%9A%A9%EB%B2%95.md)
-5. [동시성 문제 해결을 위한 재고 관리 전략 수정](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/redis-lock/4.%EB%8F%99%EC%8B%9C%EC%84%B1%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EC%9E%AC%EA%B3%A0%20%EA%B4%80%EB%A6%AC%20%EC%A0%84%EB%9E%B5%20%EC%88%98%EC%A0%95.md)
-6. [동시성 제어에서 주문 취소 통보: Amazon SES를 활용한 메일 전송 전략](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/redis-lock/6%20%EB%8F%99%EC%8B%9C%EC%84%B1%20%EC%A0%9C%EC%96%B4%EC%97%90%EC%84%9C%20%EC%A3%BC%EB%AC%B8%20%EC%B7%A8%EC%86%8C%20%ED%86%B5%EB%B3%B4%3A%20Amazon%20SES%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EB%A9%94%EC%9D%BC%20%EC%A0%84%EC%86%A1%20%EC%A0%84%EB%9E%B5.md)
-***********************************
-- [쿼리 방식에 따른 전체조회 메서드 실행속도](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/1.%EC%BF%BC%EB%A6%AC%20%EB%B0%A9%EC%8B%9D%EC%97%90%20%EB%94%B0%EB%A5%B8%20%EC%A0%84%EC%B2%B4%EC%A1%B0%ED%9A%8C%20%EB%A9%94%EC%84%9C%EB%93%9C%EC%9D%98%20%EC%8B%A4%ED%96%89%EC%86%8D%EB%8F%84.md)
-- [Spring Data JPA를 활용한 리뷰 생성 로직 구현](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/2.Spring%20Data%20JPA%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EB%A6%AC%EB%B7%B0%20%EC%83%9D%EC%84%B1%20%EB%A1%9C%EC%A7%81%20%EA%B5%AC%ED%98%84.md)
-- [MSA환경에서 배치 조회 전략을 통한 쿼리 개선](https://github.com/pie0902/TIL/blob/main/Spring/SpringBootPractices/MSA%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%20%EB%B0%B0%EC%B9%98%20%EC%A1%B0%ED%9A%8C%20%EC%A0%84%EB%9E%B5%EC%9D%84%20%ED%86%B5%ED%95%9C%20%EC%BF%BC%EB%A6%AC%20%EA%B0%9C%EC%84%A0.md)
-#### Library
-- Jackson
-  * 2024-03-31 [Object Mapper](https://github.com/pie0902/TIL/blob/main/Spring/Library/Jackson/ObjectMapper.md)
-</details>
-<details>
-<summary><h1>CS지식 공부</h1></summary>
-  
-## Web
-#### NetWork
-- [HTTP&HTTPS란?](https://github.com/pie0902/TIL/blob/main/Spring/Web/Network/HTTP%26HTTPS.md)
-- [HTTP status code](https://github.com/pie0902/TIL/blob/main/Spring/Web/Network/HTTP_status_code.md)
-- [OSI 7계층](https://github.com/pie0902/TIL/blob/main/Spring/Web/Network/OSI_7_%EA%B3%84%EC%B8%B5.md)
-#### REST
-- [REST API](https://github.com/pie0902/TIL/blob/main/Spring/Web/REST/REST_API.md)
-## DataBase
-#### Concurrency
-- [동시성 제어](https://github.com/pie0902/TIL/blob/main/Spring/DataBase/Concurrency/%EB%8F%99%EC%8B%9C%EC%84%B1%20%EC%A0%9C%EC%96%B4.md)
-- [Index](https://github.com/pie0902/TIL/blob/main/Spring/DataBase/index.md)
-
-## Spring
-#### Spring 기초 개념 정리
-- [Spring MVC 기초 개념 정리](https://github.com/pie0902/TIL/blob/main/Spring/mvc/mvc.md)
-- [Ioc&DI](https://github.com/pie0902/TIL/blob/main/Spring/Core_Concepts/IoC%26DI.md)
-- [MVC의 생명주기](https://github.com/pie0902/TIL/blob/main/Spring/mvc/mvc%EC%9D%98%20%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0.md)
-</details>
+# TIL
+.
+ * [Certifications](./Certifications)
+* [CIP](* ./Certifications/CIP)
+* [UNIX.md](* ./Certifications/CIP/UNIX.md)
+* [기억장치.md](* ./Certifications/CIP/기억장치.md)
+* [애플리케이션 설계](* ./Certifications/CIP/애플리케이션 설계)
+** [공통모듈설계.md](* ./Certifications/CIP/애플리케이션 설계/공통모듈설계.md)
+* [요구사항 확인](* ./Certifications/CIP/요구사항 확인)
+** [UML.md](* ./Certifications/CIP/요구사항 확인/UML.md)
+** [요구분석기법.md](* ./Certifications/CIP/요구사항 확인/요구분석기법.md)
+* [운영체제.md](* ./Certifications/CIP/운영체제.md)
+* [주요디스크스케줄링.md](* ./Certifications/CIP/주요디스크스케줄링.md)
+* [컴퓨터_네트워크](* ./Certifications/CIP/컴퓨터_네트워크)
+** [IP.md](* ./Certifications/CIP/컴퓨터_네트워크/IP.md)
+** [네트워크모델.md](* ./Certifications/CIP/컴퓨터_네트워크/네트워크모델.md)
+** [데이터통신.md](* ./Certifications/CIP/컴퓨터_네트워크/데이터통신.md)
+** [인터넷프로토콜.md](* ./Certifications/CIP/컴퓨터_네트워크/인터넷프로토콜.md)
+** [프로토콜.md](* ./Certifications/CIP/컴퓨터_네트워크/프로토콜.md)
+* [파일시스템.md](* ./Certifications/CIP/파일시스템.md)
+* [프로세스.md](* ./Certifications/CIP/프로세스.md)
+ * [README.md](./README.md)
+ * [Spring](./Spring)
+     * [Algrithms](./Spring/Algrithms)
+    * [Arrays](* ./Spring/Algrithms/Arrays)
+    ** [Binary_Search.md](* ./Spring/Algrithms/Arrays/Binary_Search.md)
+    ** [array.md](* ./Spring/Algrithms/Arrays/array.md)
+    ** [merge_sort.md](* ./Spring/Algrithms/Arrays/merge_sort.md)
+    * [greedy.md](* ./Spring/Algrithms/greedy.md)
+    * [linked_lists](* ./Spring/Algrithms/linked_lists)
+    ** [linked_list_example.md](* ./Spring/Algrithms/linked_lists/linked_list_example.md)
+    * [stack&queue.md](* ./Spring/Algrithms/stack&queue.md)
+     * [Core_Concepts](./Spring/Core_Concepts)
+    * [IoC&DI.md](* ./Spring/Core_Concepts/IoC&DI.md)
+     * [DataBase](./Spring/DataBase)
+    * [Concurrency](* ./Spring/DataBase/Concurrency)
+    ** [동시성 제어.md](* ./Spring/DataBase/Concurrency/동시성 제어.md)
+    * [index.md](* ./Spring/DataBase/index.md)
+     * [Library](./Spring/Library)
+    * [Jackson](* ./Spring/Library/Jackson)
+    * [ObjectMapper.md](* ./Spring/Library/Jackson/ObjectMapper.md)
+     * [SpringBootPractices](./Spring/SpringBootPractices)
+    * [MSA환경에서 배치 조회 전략을 통한 쿼리 개선.md](* ./Spring/SpringBootPractices/MSA환경에서 배치 조회 전략을 통한 쿼리 개선.md)
+    * [Redis 캐싱으로 Spring Boot 애플리케이션 속도 향상시키기.md](* ./Spring/SpringBootPractices/Redis 캐싱으로 Spring Boot 애플리케이션 속도 향상시키기.md)
+    * [Spring Data JPA를 활용한 리뷰 생성 로직 구현.md](* ./Spring/SpringBootPractices/Spring Data JPA를 활용한 리뷰 생성 로직 구현.md)
+    * [TestCode](* ./Spring/SpringBootPractices/TestCode)
+    ** [TestCode는 정리를 하면서.md](* ./Spring/SpringBootPractices/TestCode/TestCode는 정리를 하면서.md)
+    * [redis-lock](* ./Spring/SpringBootPractices/redis-lock)
+    ** [1.Redis를 사용한 동시성 제어.md](* ./Spring/SpringBootPractices/redis-lock/1.Redis를 사용한 동시성 제어.md)
+    ** [2.동시성 제어에서 겪은 문제 해결 과정.md](* ./Spring/SpringBootPractices/redis-lock/2.동시성 제어에서 겪은 문제 해결 과정.md)
+    ** [3.배포 환경을 위한 단일 Redis 인스턴스: AWS ElasticCache 활용법.md](* ./Spring/SpringBootPractices/redis-lock/3.배포 환경을 위한 단일 Redis 인스턴스: AWS ElasticCache 활용법.md)
+    ** [4.동시성 문제 해결을 위한 재고 관리 전략 수정.md](* ./Spring/SpringBootPractices/redis-lock/4.동시성 문제 해결을 위한 재고 관리 전략 수정.md)
+    ** [5.동시성 제어와 스케줄링을 통한 효과적인 주문 및 재고 관리 전략.md](* ./Spring/SpringBootPractices/redis-lock/5.동시성 제어와 스케줄링을 통한 효과적인 주문 및 재고 관리 전략.md)
+    ** [6 동시성 제어에서 주문 취소 통보: Amazon SES를 활용한 메일 전송 전략.md](* ./Spring/SpringBootPractices/redis-lock/6 동시성 제어에서 주문 취소 통보: Amazon SES를 활용한 메일 전송 전략.md)
+    * [쿼리 방식에 따른 전체조회 메서드의 실행속도.md](* ./Spring/SpringBootPractices/쿼리 방식에 따른 전체조회 메서드의 실행속도.md)
+     * [Study_Diary](./Spring/Study_Diary)
+    * [2024-03-27 TIL.md](* ./Spring/Study_Diary/2024-03-27 TIL.md)
+    * [2024-03-28 TIL.md](* ./Spring/Study_Diary/2024-03-28 TIL.md)
+    * [2024-03-29 TIL.md](* ./Spring/Study_Diary/2024-03-29 TIL.md)
+    * [2024-03-31 TIL.md](* ./Spring/Study_Diary/2024-03-31 TIL.md)
+    * [2024-04-01 TIL.md](* ./Spring/Study_Diary/2024-04-01 TIL.md)
+    * [2024-04-03_TIL.md](* ./Spring/Study_Diary/2024-04-03_TIL.md)
+    * [2024-04-05_TIL.md](* ./Spring/Study_Diary/2024-04-05_TIL.md)
+    * [2024-04-07_TIL.md](* ./Spring/Study_Diary/2024-04-07_TIL.md)
+    * [2024-04-13_TIL.md](* ./Spring/Study_Diary/2024-04-13_TIL.md)
+    * [2024-04-16_TIL.md](* ./Spring/Study_Diary/2024-04-16_TIL.md)
+    * [2024-04-20_TIL.md](* ./Spring/Study_Diary/2024-04-20_TIL.md)
+    * [2024-04-23_TIL.md](* ./Spring/Study_Diary/2024-04-23_TIL.md)
+    * [2024-04-25_TIL.md](* ./Spring/Study_Diary/2024-04-25_TIL.md)
+    * [2024-05-25_TIL.md](* ./Spring/Study_Diary/2024-05-25_TIL.md)
+    * [2024-05-30_TIL.md](* ./Spring/Study_Diary/2024-05-30_TIL.md)
+    * [docker-명령어.md](* ./Spring/Study_Diary/docker-명령어.md)
+     * [Web](./Spring/Web)
+    * [Network](* ./Spring/Web/Network)
+    ** [CORS.md](* ./Spring/Web/Network/CORS.md)
+    ** [HTTP&HTTPS.md](* ./Spring/Web/Network/HTTP&HTTPS.md)
+    ** [HTTPS.md](* ./Spring/Web/Network/HTTPS.md)
+    ** [HTTP_status_code.md](* ./Spring/Web/Network/HTTP_status_code.md)
+    ** [OSI_7_계층.md](* ./Spring/Web/Network/OSI_7_계층.md)
+    ** [TCP 3-way handshake.md](* ./Spring/Web/Network/TCP 3-way handshake.md)
+    ** [TCP&UDP.md](* ./Spring/Web/Network/TCP&UDP.md)
+    ** [시간복잡도&공간복잡도.md](* ./Spring/Web/Network/시간복잡도&공간복잡도.md)
+    * [REST](* ./Spring/Web/REST)
+    * [REST_API.md](* ./Spring/Web/REST/REST_API.md)
+     * [creww](./Spring/creww)
+    * [12.berkInsert.md](* ./Spring/creww/12.berkInsert.md)
+    * [9. creww 쿼리 개선 기록.md](* ./Spring/creww/9. creww 쿼리 개선 기록.md)
+     * [mvc](./Spring/mvc)
+         * [mvc.md](./Spring/mvc/mvc.md)
+         * [mvc의 생명주기.md](./Spring/mvc/mvc의 생명주기.md)
