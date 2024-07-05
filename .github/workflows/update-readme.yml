@@ -22,17 +22,7 @@ jobs:
             공부 기록
           list_most_recent: 5
           date_format: "2006년 01월 02일 15:04"
-          custom_tags: "Certifications/CIP, Spring"
-          dir_table_of_contents: false
-          dir_blacklist: |
-            tree.txt
-          categories_template: |
-            ## 카테고리
-            {CATEGORIES}
-          included_file_extensions: |
-            .md
-          include_nested_files: true
-          base_dir: "."
+          footer: "Updated by GitHub Actions"
 
       - name: Commit and push if changed
         run: |
