@@ -1,5 +1,4 @@
 import os
-from datetime import datetime
 import re
 
 # 설정
@@ -30,10 +29,10 @@ def print_file_list(f, file_list, level=0):
         if file[0].endswith('.md'):
             file_name = file[0][:-3].replace(' ', '_')
             file_path = file[1].replace(' ', '%20')
-            f.write(f"{indent}- [{file_name}]({file_path}) - {file[2]}\n")
+            f.write(f"{indent}- [{file_name}]({file_path})\n")
         else:
             f.write(f"{indent}- {file[0]}\n")
-        print_file_list(f, file[3], level + 1)
+        print_file_list(f, file[2], level + 1)
 
 def find_files(path, level=0, ignore_patterns=None):
     if ignore_patterns is None:
@@ -45,14 +44,12 @@ def find_files(path, level=0, ignore_patterns=None):
         if is_ignored(item_path, ignore_patterns):
             continue
 
-        mtime = datetime.fromtimestamp(os.stat(item_path).st_mtime).strftime('%Y-%m-%d')
-
         if item_path.endswith('.md'):
-            file_list.append([item, item_path, mtime, []])
+            file_list.append([item, item_path, []])
         elif os.path.isdir(item_path):
             sub_list = find_files(item_path, level + 1, ignore_patterns)
             if sub_list:
-                file_list.append([item, item_path, mtime, sub_list])
+                file_list.append([item, item_path, sub_list])
 
     return file_list
 
