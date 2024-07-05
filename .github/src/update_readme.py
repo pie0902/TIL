@@ -2,102 +2,80 @@ import os
 from datetime import datetime
 import re
 
-# 탐색할 root 경로들
-dir_paths = ["./Certifications", "./Spring"]
+# 설정
+DIR_PATHS = ["./Certifications", "./Spring"]
+IGNORE_FILE_PATH = './.github/config/.ignore'
 
-# ignore 파일을 읽어서 패턴 목록을 리스트로 저장
-patterns = []
-if os.path.exists('./.github/config/.ignore'):
-    with open('./.github/config/.ignore', 'r') as f:
-        ignore = f.readlines()
-    for p in ignore:
-        pattern = r""
-        for c in p.strip():
-            if c == '*':
-                pattern = pattern + r".*"
-            elif c in ".^$*+?{}[]|()":  # 메타 문자
-                pattern = pattern + r"[{}]".format(c)
-            else:
-                pattern = pattern + r'{}'.format(c)
-        patterns.append(pattern)
+def load_ignore_patterns():
+    patterns = []
+    if os.path.exists(IGNORE_FILE_PATH):
+        with open(IGNORE_FILE_PATH, 'r') as f:
+            for line in f:
+                pattern = line.strip()
+                pattern = pattern.replace("*", ".*")
+                pattern = re.escape(pattern).replace(r"\*", ".*")
+                patterns.append(pattern)
+    return patterns
 
-# ignore 패턴과 일치하는지 확인하는 함수
-def check_ignore_pattern(item_path):
-    for pattern in patterns:
-        if re.fullmatch(pattern, os.path.relpath(item_path)):
-            return True
-    return False
-
+def is_ignored(item_path, patterns):
+    return any(re.fullmatch(pattern, os.path.relpath(item_path)) for pattern in patterns)
 
 def sort_key(item):
-    # 파일 이름에서 숫자를 추출하여 정렬 키로 사용
     match = re.match(r'^(\d+)', item[0])
-    if match:
-        return int(match.group(1))
-    return float('inf')  # 숫자가 없는 경우 가장 뒤로 정렬
+    return int(match.group(1)) if match else float('inf')
 
-def print_file_list(f, file_list, level):
-    file_list.sort(key=sort_key)
-    for file in file_list:
-        for i in range(level):
-            f.write("  ")
+def print_file_list(f, file_list, level=0):
+    for file in sorted(file_list, key=sort_key):
+        indent = "  " * level
         if file[0].endswith('.md'):
-            # 파일이면 수정 날짜와 함께 출력
-            file_name = file[0][:-3].replace(' ', '_')  # 공백을 언더스코어로 변경
-            file_path = file[1].replace(' ', '%20')  # URL 인코딩
-            f.write("- [{}]({}) - {}\n".format(file_name, file_path, file[2]))
+            file_name = file[0][:-3].replace(' ', '_')
+            file_path = file[1].replace(' ', '%20')
+            f.write(f"{indent}- [{file_name}]({file_path}) - {file[2]}\n")
         else:
-            # 디렉토리면 날짜 빼고 출력
-            f.write("- {}\n".format(file[0]))
-        print_file_list(f, file[3], level+1)
+            f.write(f"{indent}- {file[0]}\n")
+        print_file_list(f, file[3], level + 1)
 
-def find_target(path, level):
+def find_files(path, level=0, ignore_patterns=None):
+    if ignore_patterns is None:
+        ignore_patterns = []
+
     file_list = []
-    # 하위 디렉토리 순환
     for item in os.listdir(path):
         item_path = os.path.join(path, item)
-        if check_ignore_pattern(item) or check_ignore_pattern(item_path):
-            # 파일 이름이나 경로가 ignore 조건을 만족하면 무시
+        if is_ignored(item_path, ignore_patterns):
             continue
-        # 파일(혹은 디렉토리) 리스트에 추가하기
-        mtime = datetime.fromtimestamp(os.stat(item_path).st_mtime)  # 수정 날짜 가져오기
-        mtime = mtime.strftime('%Y-%m-%d')  # 날짜 형식 변환
+
+        mtime = datetime.fromtimestamp(os.stat(item_path).st_mtime).strftime('%Y-%m-%d')
+
         if item_path.endswith('.md'):
             file_list.append([item, item_path, mtime, []])
-        # 디렉토리면 하위 디렉토리 탐색
-        if os.path.isdir(item_path):
-            sub_list = find_target(item_path, level+1)
+        elif os.path.isdir(item_path):
+            sub_list = find_files(item_path, level + 1, ignore_patterns)
             if sub_list:
                 file_list.append([item, item_path, mtime, sub_list])
+
     return file_list
 
-all_files = []
-for dir_path in dir_paths:
-    all_files.extend(find_target(dir_path, 0))
+def write_readme(file_lists):
+    with open("README.md", "w") as f:
+        f.write("# 공부 기록\n\n")
+        f.write("Certifications와 Spring 관련 학습 내용 정리\n\n")
+        f.write("---\n\n")
 
-
-# README.md 파일을 열어 파일 경로를 추가
-with open("README.md", "w") as f:
-    f.write("# 공부 기록\n\n")
-    f.write("Certifications와 Spring 관련 학습 내용 정리\n\n")
-    f.write("---\n\n")
-
-    most = 5
-    f.write("### 최근 {} 개의 학습 내용\n".format(most))
-    recent_files = sorted([file for file in all_files if file[0].endswith('.md')], key=lambda x: x[2], reverse=True)[:most]
-    for file in recent_files:
-        file_name = file[0][:-3].replace(' ', '_')  # 공백을 언더스코어로 변경
-        file_path = file[1].replace(' ', '%20')  # URL 인코딩
-        f.write("- [{}]({}) - {}\n".format(file_name, file_path, file[2]))
-    f.write("\n")
-
-    f.write("### 카테고리\n")
-    for dir_path in dir_paths:
-        f.write("- [{}]({})\n".format(os.path.basename(dir_path), dir_path))
-    f.write("\n")
-
-    for dir_path in dir_paths:
-        f.write("### [{}]({})\n".format(os.path.basename(dir_path), dir_path))
-        dir_files = [file for file in all_files if file[1].startswith(dir_path)]
-        print_file_list(f, dir_files, 0)
+        f.write("### 카테고리\n")
+        for dir_path in DIR_PATHS:
+            f.write(f"- [{os.path.basename(dir_path)}]({dir_path})\n")
         f.write("\n")
+
+        for dir_path, file_list in zip(DIR_PATHS, file_lists):
+            f.write(f"### [{os.path.basename(dir_path)}]({dir_path})\n")
+            print_file_list(f, file_list)
+            f.write("\n")
+
+def main():
+    ignore_patterns = load_ignore_patterns()
+    file_lists = [find_files(dir_path, ignore_patterns=ignore_patterns) for dir_path in DIR_PATHS]
+    write_readme(file_lists)
+
+if __name__ == "__main__":
+    main()
