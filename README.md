@@ -14,7 +14,9 @@ Certifications와 Spring 관련 학습 내용 정리
   - [파일시스템](./Certifications/CIP/파일시스템.md)
   - [기억장치](./Certifications/CIP/기억장치.md)
   - 애플리케이션_설계
+    - [HIPO&소프트웨어_아키텍처](./Certifications/CIP/애플리케이션_설계/HIPO&소프트웨어_아키텍처.md)
     - [공통모듈설계](./Certifications/CIP/애플리케이션_설계/공통모듈설계.md)
+    - [소프트웨어_아키텍처_패턴](./Certifications/CIP/애플리케이션_설계/소프트웨어_아키텍처_패턴.md)
     - [설계_모델링](./Certifications/CIP/애플리케이션_설계/설계_모델링.md)
   - 컴퓨터_네트워크
     - [데이터통신](./Certifications/CIP/컴퓨터_네트워크/데이터통신.md)
