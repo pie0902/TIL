@@ -31,6 +31,7 @@ Certifications와 Spring 관련 학습 내용 정리
     - [데이터통신](./Certifications/CIP/컴퓨터_네트워크/데이터통신.md)
   - [주요디스크스케줄링](./Certifications/CIP/주요디스크스케줄링.md)
   - 테스트및배포
+    - [테스트_지식_체계](./Certifications/CIP/테스트및배포/테스트_지식_체계.md)
     - [애플리케이션_테스트_수행](./Certifications/CIP/테스트및배포/애플리케이션_테스트_수행.md)
     - [테스트케이스](./Certifications/CIP/테스트및배포/테스트케이스.md)
   - [기억장치](./Certifications/CIP/기억장치.md)
