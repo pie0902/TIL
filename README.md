@@ -11,6 +11,7 @@ Certifications와 Spring 관련 학습 내용 정리
 ### [Certifications](./Certifications)
 - CIP2
   - 응용SW기초기술활용
+    - [프로세스_관리](./Certifications/CIP2/응용SW기초기술활용/프로세스_관리.md)
     - [페이징_기법의_문제_및_해결방안](./Certifications/CIP2/응용SW기초기술활용/페이징_기법의_문제_및_해결방안.md)
     - [지역성](./Certifications/CIP2/응용SW기초기술활용/지역성.md)
     - [메모리단편화](./Certifications/CIP2/응용SW기초기술활용/메모리단편화.md)
