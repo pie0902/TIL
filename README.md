@@ -15,7 +15,9 @@ Certifications와 Spring 관련 학습 내용 정리
     - [페이징_기법의_문제_및_해결방안](./Certifications/CIP2/응용SW기초기술활용/페이징_기법의_문제_및_해결방안.md)
     - [프로세스_스케줄링](./Certifications/CIP2/응용SW기초기술활용/프로세스_스케줄링.md)
     - [지역성](./Certifications/CIP2/응용SW기초기술활용/지역성.md)
+    - [프로세스_관리_교착상태](./Certifications/CIP2/응용SW기초기술활용/프로세스_관리_교착상태.md)
     - [메모리단편화](./Certifications/CIP2/응용SW기초기술활용/메모리단편화.md)
+    - [디스크_스케줄링](./Certifications/CIP2/응용SW기초기술활용/디스크_스케줄링.md)
 - CIP
   - [UNIX](./Certifications/CIP/UNIX.md)
   - [운영체제](./Certifications/CIP/운영체제.md)
