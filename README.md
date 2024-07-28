@@ -55,6 +55,7 @@ Certifications와 Spring 관련 학습 내용 정리
     - [논리_데이터베이스_설계](./Certifications/CIP/논리_데이터_저장소_확인/논리_데이터베이스_설계.md)
 - sqld
   - [데이터모델의이해](./Certifications/sqld/데이터모델의이해.md)
+  - [Entity](./Certifications/sqld/Entity.md)
 
 ### [Spring](./Spring)
 - Web
