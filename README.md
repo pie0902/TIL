@@ -53,6 +53,8 @@ Certifications와 Spring 관련 학습 내용 정리
     - [관계_데이터_언어](./Certifications/CIP/논리_데이터_저장소_확인/관계_데이터_언어.md)
     - [자료구조](./Certifications/CIP/논리_데이터_저장소_확인/자료구조.md)
     - [논리_데이터베이스_설계](./Certifications/CIP/논리_데이터_저장소_확인/논리_데이터베이스_설계.md)
+- sqld
+  - [데이터모델의이해](./Certifications/sqld/데이터모델의이해.md)
 
 ### [Spring](./Spring)
 - Web
