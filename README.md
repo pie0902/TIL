@@ -18,6 +18,9 @@ Certifications와 Spring 관련 학습 내용 정리
     - [프로세스_관리_교착상태](./Certifications/CIP2/응용SW기초기술활용/프로세스_관리_교착상태.md)
     - [메모리단편화](./Certifications/CIP2/응용SW기초기술활용/메모리단편화.md)
     - [디스크_스케줄링](./Certifications/CIP2/응용SW기초기술활용/디스크_스케줄링.md)
+  - 네트워크기초활용
+    - [네트워크_계층](./Certifications/CIP2/네트워크기초활용/네트워크_계층.md)
+    - [네트워크장비](./Certifications/CIP2/네트워크기초활용/네트워크장비.md)
 - CIP
   - [UNIX](./Certifications/CIP/UNIX.md)
   - [운영체제](./Certifications/CIP/운영체제.md)
