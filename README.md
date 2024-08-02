@@ -21,6 +21,7 @@ Certifications와 Spring 관련 학습 내용 정리
   - 네트워크기초활용
     - [네트워크_계층](./Certifications/CIP2/네트워크기초활용/네트워크_계층.md)
     - [프로토콜](./Certifications/CIP2/네트워크기초활용/프로토콜.md)
+    - [데이터링크계층(2계층)](./Certifications/CIP2/네트워크기초활용/데이터링크계층(2계층).md)
     - [네트워크장비](./Certifications/CIP2/네트워크기초활용/네트워크장비.md)
 - CIP
   - [UNIX](./Certifications/CIP/UNIX.md)
