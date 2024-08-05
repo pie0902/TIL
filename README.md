@@ -50,6 +50,7 @@ Certifications와 Spring 관련 학습 내용 정리
   - [데이터베이스명령어암기](./Certifications/sqld/데이터베이스명령어암기.md)
   - [데이터모델의이해](./Certifications/sqld/데이터모델의이해.md)
   - [Entity](./Certifications/sqld/Entity.md)
+  - [정규화](./Certifications/sqld/정규화.md)
 - CIP2
   - 응용SW기초기술활용
     - [프로세스_스케줄링](./Certifications/CIP2/응용SW기초기술활용/프로세스_스케줄링.md)
